@@ -9,9 +9,8 @@ class Game{
         //*********************************ADD CODE HERE *************************************/
         // Add 1 to the countOfPlayerWins property
         if (round.determineWinner() == "player") {
-            countOfPlayerWins++;
-            console.log("Player has " + countOfPlayerWins + " wins.");
-            return countOfPlayerWins;
+            game.countOfPlayerWins++;
+            return game.countOfPlayerWins;
         }
     }
 
@@ -19,8 +18,8 @@ class Game{
         //*********************************ADD CODE HERE *************************************/
         // Add 1 to the countOfComputerWins property
         if (round.determineWinner() == "computer") {
-            this.countOfComputerWins ++;
-            console.log("Player has " + this.countOfComputerWins + " wins.");
+            game.countOfComputerWins++;
+            return game.countOfComputerWins;
         }
     }
 
@@ -29,8 +28,8 @@ class Game{
         // Add 1 to the countOfTies property
 
         if (round.determineWinner() == "tie") {
-            this.countOfTies++;
-            console.log("There have been " + this.countOfTies + " ties so far.");
+            game.countOfTies++;
+            return game.countOfTies;
         }
     }
 

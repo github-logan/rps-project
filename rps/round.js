@@ -38,7 +38,7 @@ class Round{
         } else {
             computerSelection = Selections.ROCK;
         }
-        console.log("The Computer selected: " + computerSelection);
+        console.log("💻 The Computer selected: " + computerSelection);
         return computerSelection;
     }
 

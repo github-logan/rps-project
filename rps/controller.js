@@ -5,7 +5,7 @@ var game = new Game();
 function playGame() {
     //*********************************ADD CODE HERE *************************************/
     // Call the function game.newGame() to reset the counts.
-game.newGame();
+    game.newGame()
 
     //*********************************ADD CODE HERE *************************************/
     // Get the number of rounds from the user, and store it in a variable called numberOfRounds.
@@ -36,6 +36,17 @@ game.newGame();
 
     //*********************************ADD CODE HERE *************************************/
     // Display the Final Score from the properties stored in the Game object
+    if (numberOfRounds == 0 && game.countOfPlayerWins > game.countOfComputerWins){
+        console.log("The final score is W/L/T: " + game.countOfPlayerWins + " / " + game.countOfComputerWins + " / " + game.countOfTies);
+        console.log("🏆 The winner is: 🙂 player");
+    } else if (numberOfRounds == 0 && game.countOfPlayerWins > game.countOfComputerWins){
+        console.log("The final score is W/L/T: " + game.countOfPlayerWins + " / " + game.countOfComputerWins + " / " + game.countOfTies);
+        console.log("Sorry, you lost 😢."); 
+    } else {
+        console.log("The final score is W/L/T: " + game.countOfPlayerWins + " / " + game.countOfComputerWins + " / " + game.countOfTies);
+        console.log("🎀 It's a draw.");
+    }
+
 
 }
 
@@ -46,7 +57,7 @@ game.newGame();
 function playRound(roundNumber) {
     //*********************************ADD CODE HERE *************************************/
     // Display the Current Score to the User
-    console.log(Game.countOfPlayerWins);
+    console.log("Current score as W/L/T: " + game.countOfPlayerWins + " / " + game.countOfComputerWins + " / " + game.countOfTies);
 
     //Prompt for Player Selection
     var playerSelection = getPlayerSelection();
@@ -59,9 +70,17 @@ function playRound(roundNumber) {
     //*********************************ADD CODE HERE *************************************/
     // Display the Round Results from the properties stored in the Round object
 if (outcome == "tie") {
-    console.log("It's a tie!");
+    console.log("🎀 It's a tie!");
+    game.countOfTies++;
+    return game.countOfTies;
+} else if (outcome == "player") {
+    console.log("🏆 The winner is: 🙂 " + outcome + ".");
+    game.countOfPlayerWins++;
+    return game.countOfPlayerWins;
 } else {
-    console.log("The winner is: " + outcome + ".");
+    console.log("🏆 The winner is: 💻 " + outcome + ".");
+    game.countOfComputerWins++;
+    return game.countOfComputerWins;
 }
 
 
@@ -81,7 +100,7 @@ function getPlayerSelection() {
 let playerChoice = prompt("Choose your weapon: rock, paper or scissors...");
 playerChoice = playerChoice.toLowerCase();
 if (playerChoice == "rock" || playerChoice == "paper" || playerChoice == "scissors") {
-    console.log("You've selected: " + playerChoice);
+    console.log("🙂 You've selected: " + playerChoice);
     return playerChoice;
 } else {
     console.log("No " + playerChoice + ", lizard, or Spock allowed. Try again.");
