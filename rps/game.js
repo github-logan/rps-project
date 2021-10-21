@@ -9,8 +9,8 @@ class Game{
         //*********************************ADD CODE HERE *************************************/
         // Add 1 to the countOfPlayerWins property
         if (round.determineWinner() == "player") {
-            game.countOfPlayerWins++;
-            return game.countOfPlayerWins;
+            Game.countOfPlayerWins++;
+            return Game.countOfPlayerWins;
         }
     }
 
@@ -19,7 +19,7 @@ class Game{
         // Add 1 to the countOfComputerWins property
         if (round.determineWinner() == "computer") {
             game.countOfComputerWins++;
-            return game.countOfComputerWins;
+            return Game.countOfComputerWins;
         }
     }
 
@@ -28,8 +28,8 @@ class Game{
         // Add 1 to the countOfTies property
 
         if (round.determineWinner() == "tie") {
-            game.countOfTies++;
-            return game.countOfTies;
+            Game.countOfTies++;
+            return Game.countOfTies;
         }
     }
 

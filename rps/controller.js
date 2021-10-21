@@ -14,8 +14,8 @@ function playGame() {
     //  >> Else, try to get the number of rounds for the user again
 
     let numberOfRounds = prompt("How many rounds would you like to play?");
+    let setRounds = numberOfRounds;
     if (game.isNumberOfRoundsValid(numberOfRounds) == true) {
-        console.log("next step");
         game.setNumberOfRounds(numberOfRounds);
     } else {
         console.log('Type "playGame()" to play, then select a number between 1 and 5 to set your rounds.');
@@ -30,6 +30,8 @@ function playGame() {
 
     while (numberOfRounds > 0) {
         playRound(numberOfRounds);
+        let currentRound = (setRounds - numberOfRounds) + 1;
+        console.log("Current Round Number: " + currentRound + " of " + setRounds)
         numberOfRounds--;
         console.log("Number of rounds left: " + numberOfRounds);
     } 
@@ -38,8 +40,8 @@ function playGame() {
     // Display the Final Score from the properties stored in the Game object
     if (numberOfRounds == 0 && game.countOfPlayerWins > game.countOfComputerWins){
         console.log("The final score is W/L/T: " + game.countOfPlayerWins + " / " + game.countOfComputerWins + " / " + game.countOfTies);
-        console.log("🏆 The winner is: 🙂 player");
-    } else if (numberOfRounds == 0 && game.countOfPlayerWins > game.countOfComputerWins){
+        console.log("🏅 You've won. Bravo!");
+    } else if (numberOfRounds == 0 && game.countOfPlayerWins < game.countOfComputerWins){
         console.log("The final score is W/L/T: " + game.countOfPlayerWins + " / " + game.countOfComputerWins + " / " + game.countOfTies);
         console.log("Sorry, you lost 😢."); 
     } else {
@@ -57,6 +59,7 @@ function playGame() {
 function playRound(roundNumber) {
     //*********************************ADD CODE HERE *************************************/
     // Display the Current Score to the User
+        
     console.log("Current score as W/L/T: " + game.countOfPlayerWins + " / " + game.countOfComputerWins + " / " + game.countOfTies);
 
     //Prompt for Player Selection
@@ -101,10 +104,12 @@ let playerChoice = prompt("Choose your weapon: rock, paper or scissors...");
 playerChoice = playerChoice.toLowerCase();
 if (playerChoice == "rock" || playerChoice == "paper" || playerChoice == "scissors") {
     console.log("🙂 You've selected: " + playerChoice);
+    tries = 2;
     return playerChoice;
 } else {
-    console.log("No " + playerChoice + ", lizard, or Spock allowed. Try again.");
-getPlayerSelection();
+    console.log("No " + playerChoice + ", lizard, or Spock allowed. Default choice rock selected.");
+    playerChoice = "rock";
+    return playerChoice;
 };
 
 
