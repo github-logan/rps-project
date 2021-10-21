@@ -56,18 +56,18 @@ switch (this.playerSelection + this.computerSelection) {
     case "rockrock":
         case "scissorsscissors":
             case "paperpaper":
-                results = Outcomes.TIE;
-                return results;
+                game.incrementCountOfTies();
+                return Outcomes.TIE
     case "rockscissors":
         case "paperrock":
             case "scissorspaper":
-                results = Outcomes.PLAYER_WINS;
-                return results;
+                game.incrementPlayerWins();
+                return Outcomes.PLAYER_WINS;
     case "rockpaper":
         case "paperscissors":
             case "scissorsrock":
-                results = Outcomes.COMPUTER_WINS;
-                return results;
+                game.incrementComputerWins();
+                return Outcomes.COMPUTER_WINS;
 
 };
 

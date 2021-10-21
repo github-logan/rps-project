@@ -8,29 +8,22 @@ class Game{
     incrementPlayerWins(){
         //*********************************ADD CODE HERE *************************************/
         // Add 1 to the countOfPlayerWins property
-        if (round.determineWinner() == "player") {
-            Game.countOfPlayerWins++;
-            return Game.countOfPlayerWins;
-        }
+            this.countOfPlayerWins++;
+            return this.countOfPlayerWins;
     }
 
     incrementComputerWins(){
         //*********************************ADD CODE HERE *************************************/
         // Add 1 to the countOfComputerWins property
-        if (round.determineWinner() == "computer") {
-            game.countOfComputerWins++;
-            return Game.countOfComputerWins;
-        }
+            this.countOfComputerWins++;
+            return this.countOfComputerWins;
     }
 
     incrementCountOfTies(){
         //*********************************ADD CODE HERE *************************************/
         // Add 1 to the countOfTies property
-
-        if (round.determineWinner() == "tie") {
-            Game.countOfTies++;
-            return Game.countOfTies;
-        }
+            this.countOfTies++;
+            return this.countOfTies;
     }
 
 

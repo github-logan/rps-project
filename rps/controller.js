@@ -74,16 +74,16 @@ function playRound(roundNumber) {
     // Display the Round Results from the properties stored in the Round object
 if (outcome == "tie") {
     console.log("🎀 It's a tie!");
-    game.countOfTies++;
-    return game.countOfTies;
+    // game.countOfTies++;
+    // return game.countOfTies;
 } else if (outcome == "player") {
     console.log("🏆 The winner is: 🙂 " + outcome + ".");
-    game.countOfPlayerWins++;
-    return game.countOfPlayerWins;
+    // game.countOfPlayerWins++;
+    // return game.countOfPlayerWins;
 } else {
     console.log("🏆 The winner is: 💻 " + outcome + ".");
-    game.countOfComputerWins++;
-    return game.countOfComputerWins;
+    // game.countOfComputerWins++;
+    // return game.countOfComputerWins;
 }
 
 
@@ -104,7 +104,6 @@ let playerChoice = prompt("Choose your weapon: rock, paper or scissors...");
 playerChoice = playerChoice.toLowerCase();
 if (playerChoice == "rock" || playerChoice == "paper" || playerChoice == "scissors") {
     console.log("🙂 You've selected: " + playerChoice);
-    tries = 2;
     return playerChoice;
 } else {
     console.log("No " + playerChoice + ", lizard, or Spock allowed. Default choice rock selected.");
