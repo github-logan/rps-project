@@ -74,16 +74,10 @@ function playRound(roundNumber) {
     // Display the Round Results from the properties stored in the Round object
 if (outcome == "tie") {
     console.log("🎀 It's a tie!");
-    // game.countOfTies++;
-    // return game.countOfTies;
 } else if (outcome == "player") {
     console.log("🏆 The winner is: 🙂 " + outcome + ".");
-    // game.countOfPlayerWins++;
-    // return game.countOfPlayerWins;
 } else {
     console.log("🏆 The winner is: 💻 " + outcome + ".");
-    // game.countOfComputerWins++;
-    // return game.countOfComputerWins;
 }
 
 

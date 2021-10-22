@@ -51,7 +51,6 @@ class Round{
     determineWinner() {
         //*********************************ADD CODE HERE *************************************/
         // Use this.playerSelection and this.computerSelection to return the appropriate outcome from the Outcomes enumerator above.
-let results = "";
 switch (this.playerSelection + this.computerSelection) {
     case "rockrock":
         case "scissorsscissors":
